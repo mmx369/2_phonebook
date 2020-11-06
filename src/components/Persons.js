@@ -1,13 +1,14 @@
 import React from 'react'
 
-const Persons = ({ filteredPersons }) => {
+const Persons = ({ filteredPersons, handleDelete }) => {
   return (
     <div>
       {filteredPersons.map((person) => {
         return (
-          <li key={person.name}>
+          <li key={person.id}>
             {person.name}{" "}
-            {person.number}
+            {person.number}{" "}
+            <button value={person.name} onClick={handleDelete} >delete</button>
           </li>
         );
       })}
